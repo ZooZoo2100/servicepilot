@@ -1,0 +1,16 @@
+
+> servicepilot@1.0.0 test:public
+> playwright test --config playwright.public.config.ts
+
+
+Running 5 tests using 1 worker
+
+(node:45700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/public-browser/portfolio.spec.ts:9:1 › public booking, reload and cancellation use the real workflow (6.2s)
+  ✓  2 tests/public-browser/portfolio.spec.ts:33:1 › public operations and lab expose safe read-only evidence with keyboard tabs (1.6s)
+  ✓  3 tests/public-browser/portfolio.spec.ts:67:1 › public mobile safety, clarification, human handoff and long conversation (13.0s)
+  ✓  4 tests/public-browser/portfolio.spec.ts:89:1 › public HTTP entry refuses origin bypass, tampering and failure injection (595ms)
+  ✓  5 tests/public-browser/portfolio.spec.ts:117:1 › public case study, navigation, mobile layout and skip link (1.6s)
+
+  5 passed (23.4s)

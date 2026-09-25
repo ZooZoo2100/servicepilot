@@ -6,6 +6,8 @@ Built by **Mirza Zohaaq Hussain** · AI Implementation / Agentic Systems / Opera
 
 > I build and test AI systems around real operational workflows.
 
+[Open the public demo](https://servicepilot-one.vercel.app) · [Read the case study](https://servicepilot-one.vercel.app/case-study) · [Publication verification](docs/publication/REPORT.md)
+
 ServicePilot helps customers of **Varde Motorverksted**, a fictional Oslo workshop, book assessments, manage appointments and ask for human help. Automotive requests arrive with incomplete details, conflicting dates, limited capacity and safety-sensitive symptoms. The interesting problem is deciding which operational action is justified—and proving it happened.
 
 **The public demo is deterministic simulation, not a live LLM.** OpenAI and Anthropic adapters were implemented, but live-provider evaluation was intentionally not performed for this portfolio deployment. No real appointments, messages or dealership integrations are involved. Varde is not affiliated with any real workshop or Autoflows.
@@ -96,6 +98,7 @@ Keep `AGENT_PROVIDER=simulation` and `ALLOW_PAID_EVALS=false`. Do not configure 
 
 ```bash
 npm run check           # types, lint, automated tests, build, credential scan
+npm run test:runtime    # native Node ESM + SQLite startup, without bundling
 npm run eval            # explicitly writes a fresh simulation report
 npx playwright install chromium
 npm run test:e2e        # local server workflow + UI tests
@@ -107,9 +110,9 @@ CI makes no paid requests. Three local browser tests use explicitly labelled UI/
 
 ## Deployment and security
 
-**Prepared for GitHub and Vercel; not published or externally deployed.** The Vercel entry point is simulation-only. Each request restores an isolated in-memory workshop from encrypted, authenticated temporary session state; it never writes a database file. Static portfolio evidence is bundled separately. No hosted database is required.
+**Published on GitHub and deployed to Vercel.** The Vercel entry point is simulation-only. Each request restores an isolated in-memory workshop from encrypted, authenticated temporary session state; it never writes a database file. Static portfolio evidence is bundled separately. No hosted database is required.
 
-Public sessions last at most 30 minutes, are tab-scoped and may be reset or replayed. They demonstrate workflow, not durable scheduling or production authentication. The rate limiter is per instance; platform abuse controls remain necessary. Native SQLite packaging and hosted routing must be verified in the first approved Vercel preview. [Deployment checklist](docs/DEPLOYMENT.md) · [Security boundaries](SECURITY.md) · [Architecture](ARCHITECTURE.md).
+Public sessions last at most 30 minutes, are tab-scoped and may be reset or replayed. They demonstrate workflow, not durable scheduling or production authentication. The rate limiter is per instance; platform abuse controls remain necessary. Native SQLite packaging, hosted routing and all five public browser checks passed on the actual Vercel URL. [Deployment checklist](docs/DEPLOYMENT.md) · [Security boundaries](SECURITY.md) · [Architecture](ARCHITECTURE.md).
 
 Secret environment files, databases, live reports and raw private-path evidence are excluded from Git. Public log copies redact workstation paths with a hash manifest; scores, assertions and original JSON evaluation reports are preserved. Never enter real personal data in the demo.
 

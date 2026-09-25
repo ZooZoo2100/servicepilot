@@ -1,0 +1,29 @@
+{
+  "baseURL": "https://servicepilot-one.vercel.app",
+  "routes": {
+    "/": 200,
+    "/operations": 200,
+    "/case-study": 200,
+    "/.env": 404,
+    "/.env.local": 404,
+    "/src/server/portfolio-evidence.json": 404
+  },
+  "assets": {
+    "/favicon.svg": 200,
+    "/assets/index-Cmte_cYE.js": 200,
+    "/assets/index-BrayfiVz.css": 200
+  },
+  "securityFindings": [],
+  "headers": {
+    "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    "Referrer-Policy": "no-referrer",
+    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY"
+  },
+  "environmentNamesConfigured": [
+    "APP_ORIGIN",
+    "DEMO_SESSION_SECRET"
+  ]
+}

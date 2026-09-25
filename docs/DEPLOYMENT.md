@@ -1,4 +1,6 @@
-# Deployment preparation — no publication or external deployment performed
+# Deployment
+
+Published on 25 September 2026: [GitHub](https://github.com/ZooZoo2100/servicepilot) · [Public demo](https://servicepilot-one.vercel.app). See [hosted verification](publication/REPORT.md).
 
 ## Two deliberately different modes
 
@@ -17,7 +19,7 @@ State uses AES-256-GCM, random nonces and an application-specific authenticated 
 
 **Important tradeoff:** a previous valid state token can be replayed or forked until expiry. There is no central revocation, global capacity across visitors or exactly-once booking. Closing/resetting the tab loses the temporary session. These semantics are suitable only for a clearly labelled fictional demonstration; real scheduling still needs durable transactional storage and real authentication.
 
-## Vercel configuration, after approval
+## Vercel configuration
 
 The repository supplies `vercel.json`: `npm run build:public`, static output `dist/client`, a Node function at `/api/demo`, explicit SPA rewrites for `/operations` and `/case-study`, a 10-second function bound, native SQLite file inclusion and security headers. Use Node.js **24.x** and an ordinary repository install on Vercel; never upload macOS `node_modules` as a Linux build artifact.
 
@@ -41,16 +43,16 @@ npm run preview:public
 
 `npm run test:public` starts an isolated production server on port 3400 with a clearly fake test-only secret. It verifies booking/cancellation, reload continuity, read-only evidence, keyless public access, origin/tamper checks and responsive layout. `npm run test:e2e` separately checks the local engineering mode, including injected failed writes.
 
-## Before first approved preview
+## Deployment checklist
 
 1. Run check, simulation evaluation and both browser suites. Review `docs/final/REPORT.md` and security findings before pushing anything.
-2. Approve GitHub publication/deployment explicitly. Neither has been performed here.
+2. Publication and deployment were explicitly approved for this project. Review changes and scan secrets before each push.
 3. Set exact origin and a fresh session secret in the host environment. Select Node 24 and verify the Linux native `better-sqlite3` build/package in Vercel's build logs.
-4. Test the actual hosted function across refreshes and cold starts, root/Operations/Case Study routes, CSP, origin rejection, and read-only Operations. Local Node verification is not a Vercel deployment test.
+4. Test the actual hosted function across refreshes and cold starts, root/Operations/Case Study routes, CSP, origin rejection, and read-only Operations. Local Node verification is not a Vercel deployment test. Run `PUBLIC_TEST_URL=https://servicepilot-one.vercel.app npm run test:public` to test the hosted app explicitly.
 5. Configure available platform abuse/spend controls. The Express limiter is per warm instance, not a distributed quota; serverless hosting can incur costs even though model calls are impossible on the public path.
 6. Confirm the public UI says simulation and temporary demonstration. Do not enter personal information.
 
-No Vercel account/project is linked, no credentials were requested, and no remote preview was created. Native module packaging, cloud origin settings and cloud routing remain explicit unverified deployment steps.
+The `servicepilot` project is linked under Zoo’s projects, uses Node 24, and serves `https://servicepilot-one.vercel.app`. Only `APP_ORIGIN` and the sensitive `DEMO_SESSION_SECRET` were configured. Linux SQLite packaging and actual hosted browser flows passed. Automatic GitHub integration did not connect; deployments currently use authenticated `vercel deploy --prod` from the linked checkout. Future Git pushes alone do not deploy.
 
 ## Persistent local/container alternative
 

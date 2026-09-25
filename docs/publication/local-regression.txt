@@ -1,0 +1,115 @@
+
+> servicepilot@1.0.0 check
+> npm run typecheck && npm run lint && npm test && npm run build && npm run security:check
+
+
+> servicepilot@1.0.0 typecheck
+> tsc --noEmit
+
+
+> servicepilot@1.0.0 lint
+> eslint .
+
+
+> servicepilot@1.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 <repository>
+
+
+ Test Files  8 passed (8)
+      Tests  188 passed (188)
+   Start at  08:57:44
+   Duration  894ms (transform 479ms, setup 0ms, import 1.94s, tests 1.16s, environment 1ms)
+
+
+> servicepilot@1.0.0 build
+> tsc --noEmit && vite build && esbuild src/server/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/server.js
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 1896 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/index.html                                                 0.61 kB │ gzip:  0.39 kB
+dist/client/assets/dm-sans-latin-600-normal-Aqo67rzb.woff2            14.14 kB
+dist/client/assets/dm-sans-latin-400-normal-CW0RaeGs.woff2            14.20 kB
+dist/client/assets/dm-sans-latin-500-normal-B9HHJjqV.woff2            14.30 kB
+dist/client/assets/dm-sans-latin-600-normal-BmdmIIQ2.woff             18.32 kB
+dist/client/assets/dm-sans-latin-400-normal-BwCSEQnW.woff             18.35 kB
+dist/client/assets/dm-sans-latin-500-normal-Dr3UlScf.woff             18.52 kB
+dist/client/assets/dm-serif-display-latin-400-italic-BgxzcTJK.woff    21.62 kB
+dist/client/assets/dm-serif-display-latin-400-normal-_kVFYEpx.woff    21.80 kB
+dist/client/assets/dm-serif-display-latin-400-italic-DpcbibHm.woff2   24.57 kB
+dist/client/assets/dm-serif-display-latin-400-normal-C5_t9oOD.woff2   24.74 kB
+dist/client/assets/index-BrayfiVz.css                                 27.72 kB │ gzip:  6.31 kB
+dist/client/assets/index-BV8aHzGf.js                                 270.87 kB │ gzip: 83.53 kB
+
+✓ built in 181ms
+
+  dist/server.js  877.8kb
+
+⚡ Done in 81ms
+
+> servicepilot@1.0.0 security:check
+> tsx scripts/check-secrets.ts
+
+◇ injected env (15) from .env
+Credential safety check passed: 188 repository candidates, 185 index entries, browser assets, blank example and ignore rules. No credential values printed.
+
+> servicepilot@1.0.0 test:runtime
+> node scripts/check-runtime.mjs
+
+Native Node ESM: public entry import and in-memory SQLite session passed.
+
+> servicepilot@1.0.0 build:public
+> VITE_PUBLIC_DEMO=true npm run build
+
+
+> servicepilot@1.0.0 build
+> tsc --noEmit && vite build && esbuild src/server/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/server.js
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 1896 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/index.html                                                 0.61 kB │ gzip:  0.39 kB
+dist/client/assets/dm-sans-latin-600-normal-Aqo67rzb.woff2            14.14 kB
+dist/client/assets/dm-sans-latin-400-normal-CW0RaeGs.woff2            14.20 kB
+dist/client/assets/dm-sans-latin-500-normal-B9HHJjqV.woff2            14.30 kB
+dist/client/assets/dm-sans-latin-600-normal-BmdmIIQ2.woff             18.32 kB
+dist/client/assets/dm-sans-latin-400-normal-BwCSEQnW.woff             18.35 kB
+dist/client/assets/dm-sans-latin-500-normal-Dr3UlScf.woff             18.52 kB
+dist/client/assets/dm-serif-display-latin-400-italic-BgxzcTJK.woff    21.62 kB
+dist/client/assets/dm-serif-display-latin-400-normal-_kVFYEpx.woff    21.80 kB
+dist/client/assets/dm-serif-display-latin-400-italic-DpcbibHm.woff2   24.57 kB
+dist/client/assets/dm-serif-display-latin-400-normal-C5_t9oOD.woff2   24.74 kB
+dist/client/assets/index-BrayfiVz.css                                 27.72 kB │ gzip:  6.31 kB
+dist/client/assets/index-Cmte_cYE.js                                 271.47 kB │ gzip: 83.63 kB
+
+✓ built in 130ms
+
+  dist/server.js  877.8kb
+
+⚡ Done in 18ms
+
+> servicepilot@1.0.0 test:public
+> playwright test --config playwright.public.config.ts
+
+[WebServer] ◇ injected env (11) from .env
+[WebServer] (node:41420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:41421) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/public-browser/portfolio.spec.ts:9:1 › public booking, reload and cancellation use the real workflow (621ms)
+  ✓  2 tests/public-browser/portfolio.spec.ts:33:1 › public operations and lab expose safe read-only evidence with keyboard tabs (666ms)
+  ✓  3 tests/public-browser/portfolio.spec.ts:67:1 › public mobile safety, clarification, human handoff and long conversation (1.1s)
+  ✓  4 tests/public-browser/portfolio.spec.ts:89:1 › public HTTP entry refuses origin bypass, tampering and failure injection (30ms)
+  ✓  5 tests/public-browser/portfolio.spec.ts:117:1 › public case study, navigation, mobile layout and skip link (402ms)
+
+  5 passed (3.7s)
