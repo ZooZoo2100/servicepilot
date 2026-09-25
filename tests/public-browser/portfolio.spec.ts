@@ -88,6 +88,7 @@ test("public mobile safety, clarification, human handoff and long conversation",
 });
 test("public HTTP entry refuses origin bypass, tampering and failure injection", async ({
   request,
+  baseURL,
 }) => {
   expect(
     (
@@ -96,7 +97,7 @@ test("public HTTP entry refuses origin bypass, tampering and failure injection",
       })
     ).status(),
   ).toBe(403);
-  const headers = { Origin: "http://localhost:3400" };
+  const headers = { Origin: new URL(baseURL!).origin };
   expect(
     (
       await request.post("/api/demo", {

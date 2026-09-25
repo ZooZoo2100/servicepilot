@@ -14,7 +14,7 @@ import {
   type DemoState,
 } from "./demo-state.js";
 import { secretJsonReplacer } from "./secrets.js";
-import evidence from "./portfolio-evidence.json";
+import evidence from "./portfolio-evidence.json" with { type: "json" };
 
 const envelope = z
   .object({

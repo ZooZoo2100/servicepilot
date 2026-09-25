@@ -1,16 +1,17 @@
 import { defineConfig } from "@playwright/test";
+const publicTestUrl = process.env.PUBLIC_TEST_URL;
 export default defineConfig({
   testDir: "tests/public-browser",
   outputDir: "test-results/public",
   workers: 1,
   retries: 0,
   use: {
-    baseURL: "http://localhost:3400",
+    baseURL: publicTestUrl ?? "http://localhost:3400",
     viewport: { width: 1440, height: 1000 },
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
   },
-  webServer: {
+  webServer: publicTestUrl ? undefined : {
     command: "node dist/server.js",
     url: "http://localhost:3400",
     reuseExistingServer: false,

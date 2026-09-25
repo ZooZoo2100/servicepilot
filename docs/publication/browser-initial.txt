@@ -1,0 +1,206 @@
+
+> servicepilot@1.0.0 test:public
+> playwright test --config playwright.public.config.ts
+
+
+Running 5 tests using 1 worker
+
+(node:35474) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/public-browser/portfolio.spec.ts:9:1 › public booking, reload and cancellation use the real workflow (5.9s)
+(node:35492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 tests/public-browser/portfolio.spec.ts:33:1 › public operations and lab expose safe read-only evidence with keyboard tabs (5.4s)
+(node:35504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 tests/public-browser/portfolio.spec.ts:67:1 › public mobile safety, clarification, human handoff and long conversation (7.0s)
+(node:35521) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 tests/public-browser/portfolio.spec.ts:89:1 › public HTTP entry refuses origin bypass, tampering and failure injection (752ms)
+(node:35525) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 tests/public-browser/portfolio.spec.ts:117:1 › public case study, navigation, mobile layout and skip link (5.3s)
+
+
+  1) tests/public-browser/portfolio.spec.ts:9:1 › public booking, reload and cancellation use the real workflow 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/Temporary simulation/)
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText(/Temporary simulation/) with timeout 5000ms
+      - waiting for getByText(/Temporary simulation/)
+
+
+      11 | }) => {
+      12 |   await page.goto("/");
+    > 13 |   await expect(page.getByText(/Temporary simulation/)).toBeVisible();
+         |                                                        ^
+      14 |   await send(page, "Book a tyre change for my Golf");
+      15 |   await expect(
+      16 |     page.getByRole("region", { name: "Appointment proposal" }),
+        at <repository>/tests/public-browser/portfolio.spec.ts:13:56
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-booking-r-98e32-ation-use-the-real-workflow/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/public/portfolio-public-booking-r-98e32-ation-use-the-real-workflow/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-booking-r-98e32-ation-use-the-real-workflow/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/public/portfolio-public-booking-r-98e32-ation-use-the-real-workflow/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests/public-browser/portfolio.spec.ts:33:1 › public operations and lab expose safe read-only evidence with keyboard tabs 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Needs a human.' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Needs a human.' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Needs a human.' })
+
+
+      37 |   await expect(
+      38 |     page.getByRole("heading", { name: "Needs a human." }),
+    > 39 |   ).toBeVisible();
+         |     ^
+      40 |   await expect(page.getByLabel("Operations access token")).toHaveCount(0);
+      41 |   await expect(page.getByRole("tab", { name: /failure controls/ })).toHaveCount(
+      42 |     0,
+        at <repository>/tests/public-browser/portfolio.spec.ts:39:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-operation-67623-evidence-with-keyboard-tabs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/public/portfolio-public-operation-67623-evidence-with-keyboard-tabs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-operation-67623-evidence-with-keyboard-tabs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/public/portfolio-public-operation-67623-evidence-with-keyboard-tabs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests/public-browser/portfolio.spec.ts:67:1 › public mobile safety, clarification, human handoff and long conversation 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('log')
+    Expected substring: "Avoid driving"
+    Received string:    ""
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('log') with timeout 5000ms
+      - waiting for getByRole('log')
+        14 × locator resolved to <div role="log" aria-live="polite" class="conversation " aria-label="Conversation messages">…</div>
+           - unexpected value ""
+
+
+      75 |   ).toHaveCount(0);
+      76 |   await send(page, "My brakes barely work");
+    > 77 |   await expect(page.getByRole("log")).toContainText("Avoid driving");
+         |                                       ^
+      78 |   await send(page, "I want a human");
+      79 |   await expect(page.getByRole("log")).toContainText("simulated queue");
+      80 |   for (let i = 0; i < 10; i++) await send(page, "What are your opening hours?");
+        at <repository>/tests/public-browser/portfolio.spec.ts:77:39
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-mobile-sa-76add-ndoff-and-long-conversation/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/public/portfolio-public-mobile-sa-76add-ndoff-and-long-conversation/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-mobile-sa-76add-ndoff-and-long-conversation/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/public/portfolio-public-mobile-sa-76add-ndoff-and-long-conversation/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) tests/public-browser/portfolio.spec.ts:89:1 › public HTTP entry refuses origin bypass, tampering and failure injection 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 403
+    Received: 500
+
+       97 |       })
+       98 |     ).status(),
+    >  99 |   ).toBe(403);
+          |     ^
+      100 |   const headers = { Origin: new URL(baseURL!).origin };
+      101 |   expect(
+      102 |     (
+        at <repository>/tests/public-browser/portfolio.spec.ts:99:5
+
+    Error Context: test-results/public/portfolio-public-HTTP-entr-701ac-ering-and-failure-injection/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-HTTP-entr-701ac-ering-and-failure-injection/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/public/portfolio-public-HTTP-entr-701ac-ering-and-failure-injection/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) tests/public-browser/portfolio.spec.ts:117:1 › public case study, navigation, mobile layout and skip link 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText(/intentionally not performed/).first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText(/intentionally not performed/).first() with timeout 5000ms
+      - waiting for getByText(/intentionally not performed/).first()
+
+
+      124 |   await expect(
+      125 |     page.getByText(/intentionally not performed/).first(),
+    > 126 |   ).toBeVisible();
+          |     ^
+      127 |   await page.keyboard.press("Tab");
+      128 |   await expect(
+      129 |     page.getByRole("link", { name: "Skip to content" }),
+        at <repository>/tests/public-browser/portfolio.spec.ts:126:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-case-stud-2e249-mobile-layout-and-skip-link/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/public/portfolio-public-case-stud-2e249-mobile-layout-and-skip-link/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-case-stud-2e249-mobile-layout-and-skip-link/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/public/portfolio-public-case-stud-2e249-mobile-layout-and-skip-link/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    tests/public-browser/portfolio.spec.ts:9:1 › public booking, reload and cancellation use the real workflow 
+    tests/public-browser/portfolio.spec.ts:33:1 › public operations and lab expose safe read-only evidence with keyboard tabs 
+    tests/public-browser/portfolio.spec.ts:67:1 › public mobile safety, clarification, human handoff and long conversation 
+    tests/public-browser/portfolio.spec.ts:89:1 › public HTTP entry refuses origin bypass, tampering and failure injection 
+    tests/public-browser/portfolio.spec.ts:117:1 › public case study, navigation, mobile layout and skip link 
