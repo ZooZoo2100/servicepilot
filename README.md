@@ -8,9 +8,9 @@ Built by **Mirza Zohaaq Hussain** · AI Implementation / Agentic Systems / Opera
 
 [Open the public demo](https://servicepilot-one.vercel.app) · [Read the case study](https://servicepilot-one.vercel.app/case-study) · [Publication verification](docs/publication/REPORT.md)
 
-ServicePilot helps customers of **Varde Motorverksted**, a fictional Oslo workshop, book assessments, manage appointments and ask for human help. Automotive requests arrive with incomplete details, conflicting dates, limited capacity and safety-sensitive symptoms. The interesting problem is deciding which operational action is justified—and proving it happened.
+ServicePilot helps customers of **Varde Motorværksted**, a fictional workshop in Hedehusene, Denmark, book assessments, manage appointments and ask for human help. Automotive requests arrive with incomplete details, conflicting dates, limited capacity and safety-sensitive symptoms. The interesting problem is deciding which operational action is justified—and proving it happened.
 
-**The public demo is deterministic simulation, not a live LLM.** OpenAI and Anthropic adapters were implemented, but live-provider evaluation was intentionally not performed for this portfolio deployment. No real appointments, messages or dealership integrations are involved. Varde is not affiliated with any real workshop or Autoflows.
+**The public demo is deterministic simulation, not a live LLM.** OpenAI and Anthropic adapters were implemented, but live-provider evaluation was intentionally not performed for this portfolio deployment. No real appointments, messages or dealership integrations are involved. Varde is not affiliated with any real workshop or Autoflows. The fictional catalogue uses **DKK**, Danish formatting (**da-DK**) and **Europe/Copenhagen**. [Localization and historical evidence](docs/localization/README.md).
 
 ![Service Desk](docs/screenshots/portfolio/01-service-desk.png)
 
@@ -55,8 +55,8 @@ The conversational layer cannot invent a confirmed booking, price, warranty deci
 | Current simulation scenarios                                 | **100/100**                                          |
 | Separate adversarial API campaign                            | **18/29 → 29/29**                                    |
 | Automated suite before public-hosting preparation            | **176 passed**                                       |
-| Current automated suite, including public-hosting boundaries | **188 passed**                                       |
-| Browser verification                                         | **18 passed**: 13 local + 5 public-production checks |
+| Current automated suite, including public-hosting and Danish localization boundaries | **197 passed**                                       |
+| Browser verification                                         | **19 passed**: 13 local + 6 public-production checks |
 | Live OpenAI / Anthropic evaluation                           | **Intentionally not performed**                      |
 
 Automated tests include the 100 evaluation scenarios; these counts are not independent samples and are not model accuracy scores. The original 89/100 included one catalogue defect, eight overstrict handoff assertions and two wording mismatches. The original suite was already green when the separate adversarial campaign found more defects.
@@ -112,7 +112,7 @@ CI makes no paid requests. Three local browser tests use explicitly labelled UI/
 
 **Published on GitHub and deployed to Vercel.** The Vercel entry point is simulation-only. Each request restores an isolated in-memory workshop from encrypted, authenticated temporary session state; it never writes a database file. Static portfolio evidence is bundled separately. No hosted database is required.
 
-Public sessions last at most 30 minutes, are tab-scoped and may be reset or replayed. They demonstrate workflow, not durable scheduling or production authentication. The rate limiter is per instance; platform abuse controls remain necessary. Native SQLite packaging, hosted routing and all five public browser checks passed on the actual Vercel URL. [Deployment checklist](docs/DEPLOYMENT.md) · [Security boundaries](SECURITY.md) · [Architecture](ARCHITECTURE.md).
+Public sessions last at most 30 minutes, are tab-scoped and may be reset or replayed. They demonstrate workflow, not durable scheduling or production authentication. The rate limiter is per instance; platform abuse controls remain necessary. Native SQLite packaging, hosted routing and all six public browser checks passed on the actual Vercel URL. [Deployment checklist](docs/DEPLOYMENT.md) · [Security boundaries](SECURITY.md) · [Architecture](ARCHITECTURE.md).
 
 Secret environment files, databases, live reports and raw private-path evidence are excluded from Git. Public log copies redact workstation paths with a hash manifest; scores, assertions and original JSON evaluation reports are preserved. Never enter real personal data in the demo.
 

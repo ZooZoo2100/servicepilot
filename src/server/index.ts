@@ -83,7 +83,7 @@ app.use("/api/internal", (req, res, next) => {
   next();
 });
 app.get("/api/config", (_req, res) =>
-  res.json({ provider, demoMode: demo, workshop: "Varde Motorverksted" }),
+  res.json({ provider, demoMode: demo, workshop: "Varde Motorværksted" }),
 );
 app.post("/api/session", (req, res) => {
   if (!demo) {

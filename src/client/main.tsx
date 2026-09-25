@@ -26,10 +26,10 @@ function App() {
         </a>
       </div>
       <header className="site-header">
-        <a href="/" className="wordmark" aria-label="Varde Motorverksted home">
+        <a href="/" className="wordmark" aria-label="Varde Motorværksted home">
           <span className="brand-mark">V</span>
           <span>
-            VARDE<small>MOTORVERKSTED</small>
+            VARDE<small>MOTORVÆRKSTED</small>
           </span>
         </a>
         <nav aria-label="Main navigation">
@@ -61,7 +61,7 @@ function App() {
         <Customer />
       )}
       <footer>
-        <span>Varde Motorverksted · Fictional demonstration environment</span>
+        <span>Varde Motorværksted · Fictional demonstration environment</span>
         <span>Built around the work. Tested at the boundaries.</span>
       </footer>
     </>

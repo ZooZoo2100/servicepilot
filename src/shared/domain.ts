@@ -50,6 +50,7 @@ export type Service = {
   name: string;
   minutes: number;
   price: number;
+  currency: "DKK";
   description: string;
   skill: string;
 };

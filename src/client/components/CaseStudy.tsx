@@ -1,3 +1,4 @@
+import { workshopSettings } from "../../shared/workshop.js";
 import { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight, Check, GitBranch } from "lucide-react";
 import { api, type EvaluationRun } from "../api";
@@ -47,7 +48,7 @@ export function CaseStudy() {
             <span className="spec-title">SYSTEM SPECIFICATION / 001</span>
             <dl>
               <dt>Domain</dt>
-              <dd>Independent automotive workshop</dd>
+              <dd>Varde Motorværksted · Hedehusene, Denmark</dd>
               <dt>Interface</dt>
               <dd>Conversation → verified action</dd>
               <dt>Business system</dt>
@@ -234,7 +235,7 @@ export function CaseStudy() {
               </div>
               <p className="evidence-note">
                 Source: saved evaluation artifacts · {latest.provider} ·{" "}
-                {new Date(latest.at).toLocaleDateString("en-GB")}. Offline
+                {new Date(latest.at).toLocaleDateString(workshopSettings.locale, { timeZone: workshopSettings.timezone })}. Offline
                 simulation results test workflow behaviour, not live-model
                 reliability. OpenAI and Anthropic adapters were implemented, but
                 live-provider evaluation was intentionally not performed for
@@ -306,12 +307,12 @@ export function CaseStudy() {
               <tr>
                 <th scope="row">Current automated checks</th>
                 <td>—</td>
-                <td>188 passed</td>
+                <td>197 passed</td>
               </tr>
               <tr>
                 <th scope="row">Current browser checks</th>
-                <td>13 local + 5 public</td>
-                <td>18 passed</td>
+                <td>13 local + 6 public</td>
+                <td>19 passed</td>
               </tr>
             </tbody>
           </table>
@@ -477,7 +478,7 @@ export function CaseStudy() {
           </p>
           <h3>Known limitations</h3>
           <p>
-            This is a portfolio demonstration with a fictional workshop backend,
+            This is a portfolio demonstration with a fictional Danish workshop backend (DKK, da-DK, Europe/Copenhagen),
             no dealership or DMS integration, no real booking or adviser
             notification, and no live-provider evaluation. The deterministic
             planner has limited language coverage. Temporary public sessions can

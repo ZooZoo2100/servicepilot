@@ -1,3 +1,4 @@
+import { workshopSettings } from "../../shared/workshop.js";
 import { Empty } from "./Empty";
 import { TraceList } from "./TraceList";
 import { EvaluationLab } from "./EvaluationLab";
@@ -242,7 +243,7 @@ export function Operations() {
                       {h.reason}
                       <small>
                         {h.id} · {h.customerId} ·{" "}
-                        {new Date(h.createdAt).toLocaleString()}
+                        {new Date(h.createdAt).toLocaleString(workshopSettings.locale, { timeZone: workshopSettings.timezone })}
                       </small>
                     </span>
                     <ChevronDown size={17} />
@@ -386,7 +387,7 @@ export function Operations() {
                     <th>Reference</th>
                     <th>Customer / vehicle</th>
                     <th>Service</th>
-                    <th>Slot · Europe/Oslo</th>
+                    <th>Slot · Europe/Copenhagen</th>
                     <th>Status</th>
                   </tr>
                 </thead>

@@ -1,3 +1,4 @@
+import { localizeHistoricalDisplay } from "./localize-historical-display.js";
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { Agent } from "../src/server/agent.js";
@@ -10,9 +11,15 @@ const files = readdirSync("evals/runs")
 const first = files[0],
   latest = files.at(-1)!;
 const selected = [...new Set([latest, first])];
-const runs = selected.map((f) =>
-  JSON.parse(readFileSync(`evals/runs/${f}`, "utf8")),
-);
+const runs = selected.map((f) => {
+  const original = JSON.parse(readFileSync(`evals/runs/${f}`, "utf8"));
+  if (original.workshop?.currency === "DKK") return original;
+  return {
+    ...localizeHistoricalDisplay(original) as typeof original,
+    localizationNote: "Historical run: Danish labels and currency are applied for display only. This is not a Danish rerun; original evidence and unchanged scores are preserved in GitHub.",
+    originalArtifact: `https://github.com/ZooZoo2100/servicepilot/blob/main/evals/runs/${f}`,
+  };
+});
 if (runs.some((r) => r.provider !== "simulation" || r.total !== 100))
   throw new Error("Only reviewed simulation evidence is publishable");
 const store = new Store(":memory:", () => new Date("2026-09-24T10:00:00Z"));
@@ -33,7 +40,7 @@ for (const [text, failure] of [
 const evidence = {
   provenance: {
     description:
-      "Curated fictional demonstration conversations generated with the real simulation workflow. Evaluation runs are preserved recorded artifacts, not regenerated scores.",
+      "Curated fictional demonstration conversations generated with the real simulation workflow. Current Danish evaluation is a fresh run. Historical run display is explicitly localized; original source artifacts and scores remain unchanged.",
     sources: selected.map((file) => ({
       file: `evals/runs/${file}`,
       sha256: createHash("sha256")
@@ -47,7 +54,7 @@ const evidence = {
     requests: store.all("requests"),
     bookings: store.bookings(),
     provider: "simulation",
-    database: "Read-only fictional evidence / 24 September 2026",
+    database: "Read-only fictional Danish evidence / localization revision",
   },
   runs,
 };

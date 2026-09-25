@@ -49,7 +49,7 @@ export async function dispatchDemo(input: unknown) {
         provider: "simulation",
         demoMode: true,
         publicDemo: true,
-        workshop: "Varde Motorverksted",
+        workshop: "Varde Motorværksted",
       },
     };
   if (path === "/api/internal/overview" && body === undefined)

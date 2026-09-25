@@ -86,7 +86,7 @@ for (const width of [1440, 768, 390, 320]) {
 }
 await browser.close();
 writeFileSync(
-  "docs/final/screenshot-check.json",
+  "docs/localization/screenshot-check.json",
   JSON.stringify(
     {
       mode: "public simulation production build",

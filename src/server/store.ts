@@ -1,3 +1,4 @@
+import { workshopSettings } from "../shared/workshop.js";
 import { secretJsonReplacer } from "./secrets.js";
 import Database from "better-sqlite3";
 import { workshopDate } from "./time.js";
@@ -12,14 +13,12 @@ import type {
   Vehicle,
 } from "../shared/domain.js";
 export const workshop = {
-  name: "Varde Motorverksted",
-  address: "Verkstedveien 14, fictional Oslo workshop",
-  timezone: "Europe/Oslo",
+  ...workshopSettings,
+  address: "Hedehusene, Denmark — fictional workshop",
   hours: "Monday–Friday, 08:00–16:00. Closed weekends.",
   phone: "No live phone service — demonstration only",
   policy:
     "Appointments reserve assessment time. Completion times and warranty coverage require a workshop adviser.",
-  currency: "NOK",
   simulated: true,
 };
 export const services: Service[] = [
@@ -27,6 +26,7 @@ export const services: Service[] = [
     id: "routine",
     name: "Routine service",
     minutes: 90,
+    currency: workshopSettings.currency,
     price: 2490,
     description:
       "Scheduled maintenance assessment. Parts and additional work quoted separately.",
@@ -36,6 +36,7 @@ export const services: Service[] = [
     id: "tyres",
     name: "Seasonal tyre change",
     minutes: 30,
+    currency: workshopSettings.currency,
     price: 690,
     description: "Change a complete set of wheels supplied with the vehicle.",
     skill: "general",
@@ -44,6 +45,7 @@ export const services: Service[] = [
     id: "brakes",
     name: "Brake inspection",
     minutes: 60,
+    currency: workshopSettings.currency,
     price: 990,
     description:
       "Inspect reported brake concerns. Repair is quoted after assessment.",
@@ -53,6 +55,7 @@ export const services: Service[] = [
     id: "diagnostic",
     name: "Fault diagnosis",
     minutes: 60,
+    currency: workshopSettings.currency,
     price: 1290,
     description:
       "Initial investigation of warning lights, noises or driveability concerns.",
@@ -62,6 +65,7 @@ export const services: Service[] = [
     id: "battery",
     name: "12V battery & charging check",
     minutes: 45,
+    currency: workshopSettings.currency,
     price: 790,
     description: "Check the low-voltage battery and charging system.",
     skill: "diagnostics",
@@ -70,6 +74,7 @@ export const services: Service[] = [
     id: "ev",
     name: "EV assessment",
     minutes: 90,
+    currency: workshopSettings.currency,
     price: 1490,
     description:
       "Initial EV charging and electrical assessment. No high-voltage battery rebuilds.",
@@ -142,7 +147,7 @@ export class Store {
           .run(v.id, v.customerId, JSON.stringify(v));
       for (const s of services)
         this.db
-          .prepare("INSERT OR IGNORE INTO services VALUES (?,?)")
+          .prepare("INSERT INTO services VALUES (?,?) ON CONFLICT(id) DO UPDATE SET data=excluded.data")
           .run(s.id, JSON.stringify(s));
       for (const [id, name, skills] of [
         ["t-1", "Ingrid Solheim", "general,diagnostics"],

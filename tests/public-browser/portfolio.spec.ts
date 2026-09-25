@@ -144,3 +144,13 @@ test("public case study, navigation, mobile layout and skip link", async ({
     page.getByRole("heading", { name: "Evaluation Lab", exact: true }),
   ).toBeVisible();
 });
+test("Danish workshop identity, catalogue currency and customer prose", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("link", {name:"Varde Motorværksted home"})).toBeVisible();
+  await expect(page.getByText("Hedehusene, Denmark · Fictional workshop")).toBeVisible();
+  await send(page,"How much does routine service cost?");
+  await expect(page.getByRole("log")).toContainText("2.490 DKK");
+  await send(page,"Where are you located?");
+  await expect(page.getByRole("log")).toContainText("Hedehusene, Denmark");
+  await expect(page.locator("body")).not.toContainText(/NOK|Oslo|Motorverksted/);
+});

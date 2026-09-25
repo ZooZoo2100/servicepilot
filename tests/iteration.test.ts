@@ -23,7 +23,7 @@ it("a later safety issue upgrades the existing handoff without creating a duplic
     store.close();
   }
 });
-it("relative dates use Oslo calendar day around UTC midnight", async () => {
+it("relative dates use Copenhagen calendar day around UTC midnight", async () => {
   const store = new Store(":memory:", () => new Date("2026-09-24T22:30:00Z"));
   try {
     const agent = new Agent(

@@ -20,3 +20,5 @@ Captured from the local production **public simulation** build, with fictional a
 The expanded SP-089 failure in the Lab image is the genuine catalogue defect: a request for all services returned only routine service. Eight other failures in that initial run were overstrict handoff assertions. The case study explains this distinction and separately documents actual safety/context defects found in adversarial testing.
 
 Regenerate intentionally with `node --import tsx scripts/capture-portfolio.ts` while the public production preview runs on port 3000 (or set `SCREENSHOT_ORIGIN`). The script makes only simulation requests. It checks browser errors and case-study overflow; screenshot inspection is still required. Historical test-state images elsewhere in this folder's parent remain separate from this clean presentation set.
+
+Regenerated for the fictional Danish workshop in Hedehusene (DKK, da-DK, Europe/Copenhagen). Historical run views explicitly identify their localized presentation; original recorded evidence is preserved.

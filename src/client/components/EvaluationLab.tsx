@@ -1,3 +1,4 @@
+import { workshopSettings } from "../../shared/workshop.js";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import type { EvaluationRun } from "../api";
@@ -32,12 +33,13 @@ export function EvaluationLab({ runs }: { runs: EvaluationRun[] }) {
           <select value={run.id} onChange={(e) => setSelected(e.target.value)}>
             {runs.map((r) => (
               <option key={r.id} value={r.id}>
-                {new Date(r.at).toLocaleString()} · {r.passed}/{r.total}
+                {new Date(r.at).toLocaleString(workshopSettings.locale, { timeZone: workshopSettings.timezone })} · {r.passed}/{r.total}
               </option>
             ))}
           </select>
         </label>
       </div>
+      {run.localizationNote && <p className="muted">{run.localizationNote} <a href={run.originalArtifact}>Original recorded evidence</a></p>}
       <div className="eval-metrics">
         <div>
           <span className="eyebrow">SCENARIOS</span>

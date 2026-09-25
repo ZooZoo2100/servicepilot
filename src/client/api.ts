@@ -58,6 +58,8 @@ export type EvaluationResult = {
   trace: import("../shared/domain").Trace[];
 };
 export type EvaluationRun = {
+  localizationNote?: string;
+  originalArtifact?: string;
   id: string;
   at: string;
   provider: string;

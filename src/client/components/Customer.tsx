@@ -1,3 +1,4 @@
+import { workshopSettings } from "../../shared/workshop.js";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   ArrowRight,
@@ -110,7 +111,7 @@ export function Customer() {
     <main id="main" className="customer-layout">
       <aside className="workshop-panel">
         <div>
-          <p className="eyebrow">THE SERVICE DESK / OSLO</p>
+          <p className="eyebrow">THE SERVICE DESK / HEDEHUSENE</p>
           <h1>
             Good care.
             <br /> Clear answers.
@@ -125,13 +126,13 @@ export function Customer() {
           <p>
             <Clock3 size={17} />
             <span>
-              Monday–Friday<small>08:00–16:00 · Europe/Oslo</small>
+              Monday–Friday<small>08:00–16:00 · Europe/Copenhagen</small>
             </span>
           </p>
           <p>
             <MapPin size={17} />
             <span>
-              Varde Motorverksted<small>A fictional independent workshop</small>
+              Varde Motorværksted<small>Hedehusene, Denmark · Fictional workshop</small>
             </span>
           </p>
         </div>
@@ -236,7 +237,8 @@ export function Customer() {
                     "YOU"
                   )}
                   <time dateTime={m.at}>
-                    {new Date(m.at).toLocaleTimeString("en-GB", {
+                    {new Date(m.at).toLocaleTimeString(workshopSettings.locale, {
+                      timeZone: workshopSettings.timezone,
                       hour: "2-digit",
                       minute: "2-digit",
                     })}

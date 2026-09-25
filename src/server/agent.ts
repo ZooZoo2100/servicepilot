@@ -1,3 +1,4 @@
+import { formatPrice, formatDate } from "../shared/workshop.js";
 import { requestConstraints } from "./constraints.js";
 import { redactSecrets } from "./secrets.js";
 import { randomUUID } from "node:crypto";
@@ -279,7 +280,7 @@ export class Agent {
           selected
             .map(
               (s) =>
-                `${s.name} — NOK ${s.price.toLocaleString("en-US")} for ${s.minutes} minutes. ${s.description}`,
+                `${s.name} — ${formatPrice(s.price, s.currency)} for ${s.minutes} minutes. ${s.description}`,
             )
             .join("\n\n") +
             "\n\nThese are demonstration catalogue prices, not a repair quotation. Additional work requires a separate quote.",
@@ -341,7 +342,7 @@ export class Agent {
     if (p.intent === "lookup")
       return this.finish(
         c,
-        `Your verified booking ${b.id} is confirmed for ${slot.date} at ${slot.time} (Europe/Oslo). This reserves assessment time, not a repair completion deadline.`,
+        `Your verified booking ${b.id} is confirmed for ${formatDate(slot.date)} at ${slot.time} (Europe/Copenhagen). This reserves assessment time, not a repair completion deadline.`,
       );
     c.context.vehicleId = b.vehicleId;
     c.context.serviceId = b.serviceId;
@@ -356,7 +357,7 @@ export class Agent {
         bookingId: b.id,
         version: b.version,
         expiresAt: new Date(this.store.now().getTime() + 600000).toISOString(),
-        summary: `Cancel booking ${b.id} on ${slot.date} at ${slot.time} (Europe/Oslo).`,
+        summary: `Cancel booking ${b.id} on ${formatDate(slot.date)} at ${slot.time} (Europe/Copenhagen).`,
       };
       c.proposal = proposal;
       return this.finish(
@@ -433,7 +434,7 @@ export class Agent {
         source: "unknown",
       },
     );
-    const summary = `${booking ? "Move" : "Book"} ${s.name.toLowerCase()} for your ${v.make} ${v.model} (${v.registration}) on ${selected.date} at ${selected.time} (Europe/Oslo). ${s.minutes}-minute assessment · NOK ${s.price.toLocaleString("en-US")}. Additional work quoted separately.${booking ? ` Replaces ${booking.id}.` : ""}`;
+    const summary = `${booking ? "Move" : "Book"} ${s.name.toLowerCase()} for your ${v.make} ${v.model} (${v.registration}) on ${formatDate(selected.date)} at ${selected.time} (Europe/Copenhagen). ${s.minutes}-minute assessment · ${formatPrice(s.price, s.currency)}. Additional work quoted separately.${booking ? ` Replaces ${booking.id}.` : ""}`;
     c.proposal = {
       id: randomUUID(),
       action: booking ? "modify" : "create",

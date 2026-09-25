@@ -163,7 +163,7 @@ export class LivePlanner implements Planner {
     const input = JSON.stringify(
       {
         today: workshopDate(now),
-        timezone: "Europe/Oslo",
+        timezone: "Europe/Copenhagen",
         vehicles: vehicles.map(({ id, make, model, registration }) => ({
           id,
           make,

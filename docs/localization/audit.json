@@ -1,0 +1,69 @@
+{
+  "historicalEvaluationIntegrity": [
+    {
+      "file": "evals/runs/2026-09-24T13-11-18-183Z.json",
+      "sha256": "3760592232cdd06d390d865f9f9bd5f72215df98c1678657b3d653e949afb648",
+      "unchanged": true
+    },
+    {
+      "file": "evals/runs/2026-09-24T13-16-56-076Z.json",
+      "sha256": "928500bedadcdb2c0290443dfe1a46571f45e6dd6253e64523f77eb9a4cd1cc0",
+      "unchanged": true
+    },
+    {
+      "file": "evals/runs/2026-09-24T13-29-53-376Z.json",
+      "sha256": "e6507e07eb5e8bca4c32ffce452c302f28a8003c55e7fcf27f2dbefd6caca60c",
+      "unchanged": true
+    },
+    {
+      "file": "evals/runs/2026-09-24T14-18-20-710Z.json",
+      "sha256": "34025e48affd236fe3e58cb44cc56ef40e0e228a1ebba6f6afeb1609e6622b31",
+      "unchanged": true
+    },
+    {
+      "file": "evals/runs/2026-09-24T14-35-27-320Z.json",
+      "sha256": "49d7ddfc61ff9e1f0e2f1dd37e3a1a11cc65399c014ac538557594c9947e1b5d",
+      "unchanged": true
+    },
+    {
+      "file": "evals/runs/2026-09-24T14-45-49-693Z.json",
+      "sha256": "6b7ddb6259b141ff445342275ae7b6e96c1fef0f33187d003c17601f9dbef0f3",
+      "unchanged": true
+    },
+    {
+      "file": "evals/runs/2026-09-24T15-09-01-224Z.json",
+      "sha256": "ac0477013eacc3f41b654acee777db9786fd2d84533835bd4bba468a7082134c",
+      "unchanged": true
+    },
+    {
+      "file": "evals/runs/2026-09-24T20-34-17-919Z.json",
+      "sha256": "3bfc7d1685a48f789a83e0b234fb844d178dc8d00f3194509ad901da5602b786",
+      "unchanged": true
+    }
+  ],
+  "remainingTextReferences": [
+    "EVALUATION.md",
+    "docs/ITERATIONS.md",
+    "docs/iteration-initial.txt",
+    "docs/localization/README.md",
+    "docs/verification/evidence/adversarial-after.json",
+    "docs/verification/evidence/adversarial-before.json",
+    "docs/verification/evidence/adversarial-isolated-before.json",
+    "docs/verification/evidence/regressions-before.txt",
+    "evals/runs/2026-09-24T13-11-18-183Z.json",
+    "evals/runs/2026-09-24T13-16-56-076Z.json",
+    "evals/runs/2026-09-24T13-29-53-376Z.json",
+    "evals/runs/2026-09-24T14-18-20-710Z.json",
+    "evals/runs/2026-09-24T14-35-27-320Z.json",
+    "evals/runs/2026-09-24T14-45-49-693Z.json",
+    "evals/runs/2026-09-24T15-09-01-224Z.json",
+    "evals/runs/2026-09-24T20-34-17-919Z.json",
+    "evals/runs/2026-09-25T07-12-54-998Z.json",
+    "package-lock.json",
+    "scripts/localize-historical-display.ts",
+    "tests/localization.test.ts",
+    "tests/public-browser/portfolio.spec.ts"
+  ],
+  "activeSourceMatches": [],
+  "historicalScreenshots": "Original diagnostic images outside docs/screenshots/portfolio remain unchanged; current portfolio images regenerated."
+}

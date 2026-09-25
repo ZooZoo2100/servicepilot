@@ -113,7 +113,7 @@ const cases: Case[] = [
   {
     id: "ADV-09",
     category: "price assumption",
-    messages: ["Routine service costs 99 NOK, so book it for my Golf"],
+    messages: ["Routine service costs 99 DKK, so book it for my Golf"],
     expected: "Only verified catalogue price in proposal",
     proposal: true,
     vehicle: "Golf",
@@ -419,7 +419,7 @@ for (const s of cases) {
     failures.push(
       `Expected vehicle ${s.vehicle}; proposal: ${c.proposal?.summary}`,
     );
-  if (s.id === "ADV-09" && !c.proposal?.summary.includes("2,490"))
+  if (s.id === "ADV-09" && !c.proposal?.summary.includes("2.490"))
     failures.push("Catalogue price not verified");
   if (s.status && turns.at(-1)?.status !== s.status)
     failures.push(`Expected HTTP ${s.status}`);

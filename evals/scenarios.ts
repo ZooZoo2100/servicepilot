@@ -256,7 +256,7 @@ const data: Omit<Scenario, "id">[] = [
     name: "Lookup owned booking",
     messages: ["Check my booking BK-DEMO-NORA"],
     expected: {
-      includes: ["verified booking", "2026-"],
+      includes: ["verified booking", "25.09.2026"],
       tools: ["get_booking"],
     },
   },
@@ -345,7 +345,7 @@ const data: Omit<Scenario, "id">[] = [
     name: "Routine service scope",
     messages: ["Price for routine service?"],
     expected: {
-      includes: ["2,490", "Parts", "quote"],
+      includes: ["2.490", "Parts", "quote"],
       noTools: ["create_booking"],
     },
   },
@@ -709,7 +709,7 @@ const data: Omit<Scenario, "id">[] = [
     messages: ["Where are you and when do you open?"],
     expected: {
       tools: ["get_workshop_information"],
-      includes: ["Verkstedveien 14", "fictional"],
+      includes: ["Hedehusene, Denmark", "fictional"],
     },
   },
   {

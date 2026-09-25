@@ -182,7 +182,7 @@ it("V17 schema-valid model hallucinated date cannot replace a date absent from t
   });
   await agent.message(c, "Book routine service for Golf");
   expect(store.bookings()).toHaveLength(2);
-  expect(c.proposal?.summary).toContain("2026-10-01");
+  expect(c.proposal?.summary).toContain("01.10.2026");
 });
 it("V18 tool-call ceiling is explicit and resets for a new turn", () => {
   const { tools, c } = setup();

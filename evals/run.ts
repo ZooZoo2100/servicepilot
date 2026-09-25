@@ -1,3 +1,4 @@
+import { workshopSettings } from "../src/shared/workshop.js";
 import { createHash } from "node:crypto";
 import "dotenv/config";
 import { redactSecrets, secretJsonReplacer } from "../src/server/secrets.js";
@@ -62,6 +63,7 @@ const sourceFiles = [
     .filter((f) => f.endsWith(".ts"))
     .map((f) => "src/server/" + f),
   "src/shared/domain.ts",
+  "src/shared/workshop.ts",
   "evals/scenarios.ts",
   "evals/runner.ts",
   "evals/run.ts",
@@ -73,6 +75,7 @@ const scenarioHash = createHash("sha256")
   .update(JSON.stringify(scenarios))
   .digest("hex");
 const report = {
+  workshop: workshopSettings,
   sourceHash,
   scenarioHash,
   runtime: process.version,

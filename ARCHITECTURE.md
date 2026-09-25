@@ -38,7 +38,7 @@ sequenceDiagram
 | `src/server/agent.ts`    | Finite conversation workflows, context retention, tool-derived wording, proposals and truthful failure handling |
 | `src/server/tools.ts`    | Tool allowlist, strict argument validation, ownership and confirmation gates, traces, fault injection           |
 | `src/server/store.ts`    | Schema, fictional seeds, scoped records, transactions and persisted model-call budget                           |
-| `src/server/time.ts`     | Oslo calendar arithmetic, independent of server timezone                                                        |
+| `src/server/time.ts`     | Copenhagen calendar arithmetic, independent of server timezone                                                        |
 | `src/server/index.ts`    | HTTP authorization, origin checks, limits, sessions, internal routes and static serving                         |
 | `src/client/components/` | Customer, operations, lab, trace inspector and portfolio views                                                  |
 | `evals/`                 | Scenario definitions, isolated runner, immutable timestamped run evidence                                       |
@@ -79,7 +79,7 @@ The workflow retains vehicle, service, date, time and booking reference across t
 
 ## Scheduling and persistence
 
-The seed creates three fictional customers, three vehicles, six services, three technicians and a rolling 21-day scheduling window. Availability starts tomorrow, Monday–Friday, at 08:00, 09:30, 11:00, 13:00 and 14:30 Oslo time. The uniform 90-minute blocks are intentionally conservative: even a 30-minute tyre assessment consumes a full block. There are deterministic gaps in capacity; two example appointments are seeded on first creation.
+The seed creates three fictional customers, three vehicles, six services, three technicians and a rolling 21-day scheduling window. Availability starts tomorrow, Monday–Friday, at 08:00, 09:30, 11:00, 13:00 and 14:30 Copenhagen time. The uniform 90-minute blocks are intentionally conservative: even a 30-minute tyre assessment consumes a full block. There are deterministic gaps in capacity; two example appointments are seeded on first creation.
 
 A confirmed booking consumes a technician/time block across services. The transaction rechecks capacity and optimistic booking version. A partial unique index also rejects two active bookings for the same slot. SQLite transactions and the single process serialize commits. Multi-worker hosting is explicitly unsupported without shared locks and a stronger resource reservation schema.
 

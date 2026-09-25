@@ -27,7 +27,7 @@ export function sealState(state: DemoState) {
   if (input.length > 1500000) throw new Error("DEMO_SESSION_LIMIT");
   const iv = randomBytes(12);
   const cipher = createCipheriv("aes-256-gcm", key(), iv);
-  cipher.setAAD(Buffer.from("servicepilot-demo-v1"));
+  cipher.setAAD(Buffer.from("servicepilot-demo-v2-dk"));
   const encrypted = Buffer.concat([
     cipher.update(deflateSync(input)),
     cipher.final(),
@@ -43,7 +43,7 @@ export function openState(token: string, now = Date.now()): DemoState {
     throw new Error("INVALID_DEMO_SESSION");
   const data = Buffer.from(token, "base64url");
   const decipher = createDecipheriv("aes-256-gcm", key(), data.subarray(0, 12));
-  decipher.setAAD(Buffer.from("servicepilot-demo-v1"));
+  decipher.setAAD(Buffer.from("servicepilot-demo-v2-dk"));
   decipher.setAuthTag(data.subarray(12, 28));
   const compressed = Buffer.concat([
     decipher.update(data.subarray(28)),
