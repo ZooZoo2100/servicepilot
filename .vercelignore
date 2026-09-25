@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+var/
+docs/private-evidence/
+playwright-report/
+test-results/
+node_modules/
+.git/

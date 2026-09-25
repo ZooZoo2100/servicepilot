@@ -1,0 +1,24 @@
+
+> servicepilot@1.0.0 test:e2e
+> playwright test
+
+[WebServer] (node:10418) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ◇ injected env (5) from .env
+
+Running 10 tests using 1 worker
+
+(node:10419) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/product.spec.ts:16:1 › A, H, I: first-message booking, withdrawal, then explicit consent (835ms)
+  ✓   2 tests/e2e/product.spec.ts:39:1 › B: unavailable date offers no imaginary booking (400ms)
+  ✓   3 tests/e2e/product.spec.ts:49:1 › C: unsafe brakes trigger truthful simulated handoff (455ms)
+  ✓   4 tests/e2e/product.spec.ts:61:1 › D, E: warranty and prompt injection (500ms)
+  ✓   5 tests/e2e/product.spec.ts:71:1 › F: employee promise is unverified for unknown account (415ms)
+  ✓   6 tests/e2e/product.spec.ts:83:1 › G: failure after confirmation never becomes success (533ms)
+  ✓   7 tests/e2e/product.spec.ts:108:1 › J: internal handoff, traces and genuine evaluation evidence (1.4s)
+  ✓   8 tests/e2e/product.spec.ts:156:1 › API authorization, origin, schema and conversation isolation (25ms)
+  ✓   9 tests/e2e/product.spec.ts:181:1 › mobile, long text, loading and recoverable error states (1.4s)
+  ✓  10 tests/e2e/product.spec.ts:241:1 › case study mobile does not overflow and shows real metrics (403ms)
+
+  10 passed (7.8s)

@@ -1,0 +1,27 @@
+
+> servicepilot@1.0.0 test:e2e
+> playwright test
+
+[WebServer] (node:16462) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ◇ injected env (8) from .env
+
+Running 13 tests using 1 worker
+
+(node:16484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/product.spec.ts:16:1 › A, H, I: first-message booking, withdrawal, then explicit consent (934ms)
+  ✓   2 tests/e2e/product.spec.ts:39:1 › B: unavailable date offers no imaginary booking (499ms)
+  ✓   3 tests/e2e/product.spec.ts:49:1 › C: unsafe brakes trigger truthful simulated handoff (549ms)
+  ✓   4 tests/e2e/product.spec.ts:61:1 › D, E: warranty and prompt injection (529ms)
+  ✓   5 tests/e2e/product.spec.ts:71:1 › F: employee promise is unverified for unknown account (484ms)
+  ✓   6 tests/e2e/product.spec.ts:83:1 › G: failure after confirmation never becomes success (541ms)
+  ✓   7 tests/e2e/product.spec.ts:108:1 › J: internal handoff, traces and genuine evaluation evidence (1.5s)
+  ✓   8 tests/e2e/product.spec.ts:156:1 › API authorization, origin, schema and conversation isolation (26ms)
+  ✓   9 tests/e2e/product.spec.ts:181:1 › mobile, long text, loading and recoverable error states (1.4s)
+  ✓  10 tests/e2e/product.spec.ts:241:1 › case study mobile does not overflow and shows real metrics (467ms)
+  ✓  11 tests/e2e/verification.spec.ts:10:1 › keyboard operations tabs, empty states and mobile reflow (explicit UI fixture) (472ms)
+  ✓  12 tests/e2e/verification.spec.ts:52:1 › long conversation, long unbroken text, mobile composer and reduced motion (UI fixture) (399ms)
+  ✓  13 tests/e2e/verification.spec.ts:99:1 › non-JSON rate-limit errors are readable and preserve draft (transport fixture) (422ms)
+
+  13 passed (9.7s)

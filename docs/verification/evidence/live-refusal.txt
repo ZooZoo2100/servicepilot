@@ -1,0 +1,16 @@
+
+> servicepilot@1.0.0 eval
+> tsx evals/run.ts --live
+
+◇ injected env (11) from .env
+<repository>/evals/run.ts:19
+  throw new Error(
+        ^
+
+Error: Live evaluation not configured: AGENT_PROVIDER=openai or anthropic; OPENAI_API_KEY (a valid server-side credential); ALLOW_PAID_EVALS=true; MAX_LIVE_EVAL_CALLS (integer 1–250)
+    at <anonymous> (<repository>/evals/run.ts:19:9)
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.21.0

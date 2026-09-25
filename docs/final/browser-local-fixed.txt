@@ -1,0 +1,62 @@
+
+> servicepilot@1.0.0 test:e2e
+> playwright test
+
+[WebServer] (node:16161) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ◇ injected env (8) from .env
+
+Running 13 tests using 1 worker
+
+(node:16180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/product.spec.ts:16:1 › A, H, I: first-message booking, withdrawal, then explicit consent (804ms)
+  ✓   2 tests/e2e/product.spec.ts:39:1 › B: unavailable date offers no imaginary booking (486ms)
+  ✓   3 tests/e2e/product.spec.ts:49:1 › C: unsafe brakes trigger truthful simulated handoff (491ms)
+  ✓   4 tests/e2e/product.spec.ts:61:1 › D, E: warranty and prompt injection (527ms)
+  ✓   5 tests/e2e/product.spec.ts:71:1 › F: employee promise is unverified for unknown account (455ms)
+  ✓   6 tests/e2e/product.spec.ts:83:1 › G: failure after confirmation never becomes success (537ms)
+  ✓   7 tests/e2e/product.spec.ts:108:1 › J: internal handoff, traces and genuine evaluation evidence (1.6s)
+  ✓   8 tests/e2e/product.spec.ts:156:1 › API authorization, origin, schema and conversation isolation (22ms)
+  ✓   9 tests/e2e/product.spec.ts:181:1 › mobile, long text, loading and recoverable error states (1.4s)
+  ✘  10 tests/e2e/product.spec.ts:241:1 › case study mobile does not overflow and shows real metrics (366ms)
+(node:16244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 tests/e2e/verification.spec.ts:10:1 › keyboard operations tabs, empty states and mobile reflow (explicit UI fixture) (521ms)
+  ✓  12 tests/e2e/verification.spec.ts:52:1 › long conversation, long unbroken text, mobile composer and reduced motion (UI fixture) (389ms)
+  ✓  13 tests/e2e/verification.spec.ts:99:1 › non-JSON rate-limit errors are readable and preserve draft (transport fixture) (424ms)
+
+
+  1) tests/e2e/product.spec.ts:241:1 › case study mobile does not overflow and shows real metrics ──
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      252 |       () => document.documentElement.scrollWidth <= innerWidth,
+      253 |     ),
+    > 254 |   ).toBe(true);
+          |     ^
+      255 |   await page.screenshot({
+      256 |     path: "docs/screenshots/case-study-mobile.png",
+      257 |     fullPage: true,
+        at <repository>/tests/e2e/product.spec.ts:254:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/local/product-case-study-mobile--70771-flow-and-shows-real-metrics/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/local/product-case-study-mobile--70771-flow-and-shows-real-metrics/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/local/product-case-study-mobile--70771-flow-and-shows-real-metrics/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/local/product-case-study-mobile--70771-flow-and-shows-real-metrics/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests/e2e/product.spec.ts:241:1 › case study mobile does not overflow and shows real metrics ───
+  12 passed (9.7s)

@@ -1,0 +1,35 @@
+
+ RUN  v4.1.11 <repository>
+
+ ❯ tests/provider-concurrency.test.ts (2 tests | 1 failed) 57ms
+   × a budget-denied turn does not reuse an earlier request observation or token usage 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/provider-concurrency.test.ts > a budget-denied turn does not reuse an earlier request observation or token usage
+AssertionError: expected { provider: 'openai', …(5) } to be undefined
+
+- Expected:
+undefined
+
++ Received:
+{
+  "inputTokens": 10,
+  "model": "gpt-4.1-mini",
+  "outputTokens": 10,
+  "provider": "openai",
+  "rawOutput": "{\"intent\":\"hours\",\"serviceId\":null,\"vehicleId\":null,\"date\":null,\"time\":null,\"bookingId\":null,\"safetyCritical\":false,\"correction\":false,\"withdraw\":false,\"summary\":\"hours\",\"clarification\":null}",
+  "requestId": "one-real-attempt",
+}
+
+ ❯ tests/provider-concurrency.test.ts:55:863
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  16:44:28
+   Duration  302ms (transform 40ms, setup 0ms, import 177ms, tests 57ms, environment 0ms)
+

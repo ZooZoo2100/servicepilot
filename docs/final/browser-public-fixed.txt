@@ -1,0 +1,52 @@
+
+> servicepilot@1.0.0 test:public
+> playwright test --config playwright.public.config.ts
+
+[WebServer] ◇ injected env (11) from .env
+[WebServer] (node:16160) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:16170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/public-browser/portfolio.spec.ts:7:1 › public booking, reload and cancellation use the real workflow (812ms)
+  ✓  2 tests/public-browser/portfolio.spec.ts:21:1 › public operations and lab expose safe read-only evidence with keyboard tabs (769ms)
+  ✓  3 tests/public-browser/portfolio.spec.ts:38:1 › public mobile safety, clarification, human handoff and long conversation (1.2s)
+  ✓  4 tests/public-browser/portfolio.spec.ts:52:1 › public HTTP entry refuses origin bypass, tampering and failure injection (37ms)
+  ✘  5 tests/public-browser/portfolio.spec.ts:61:1 › public case study, navigation, mobile layout and skip link (261ms)
+
+
+  1) tests/public-browser/portfolio.spec.ts:61:1 › public case study, navigation, mobile layout and skip link 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      68 |   for (const width of [1440, 768, 390, 320]) {
+      69 |     await page.setViewportSize({ width, height: 844 });
+    > 70 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+         |                                                                                           ^
+      71 |   }
+      72 |   await page.getByRole("link", { name: /Explore scenarios in the Evaluation Lab/ }).click();
+      73 |   await expect(page.getByRole("heading", { name: "Evaluation Lab", exact: true })).toBeVisible();
+        at <repository>/tests/public-browser/portfolio.spec.ts:70:91
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-case-stud-2e249-mobile-layout-and-skip-link/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/public/portfolio-public-case-stud-2e249-mobile-layout-and-skip-link/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/public/portfolio-public-case-stud-2e249-mobile-layout-and-skip-link/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/public/portfolio-public-case-stud-2e249-mobile-layout-and-skip-link/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests/public-browser/portfolio.spec.ts:61:1 › public case study, navigation, mobile layout and skip link 
+  4 passed (3.9s)

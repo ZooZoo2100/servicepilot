@@ -1,0 +1,37 @@
+
+ RUN  v4.1.11 <repository>
+
+ ❯ tests/iteration.test.ts (3 tests | 2 failed) 30ms
+   × a later safety issue upgrades the existing handoff without creating a duplicate 12ms
+   × relative dates use Oslo calendar day around UTC midnight 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/iteration.test.ts > a later safety issue upgrades the existing handoff without creating a duplicate
+AssertionError: expected 'normal' to be 'urgent' // Object.is equality
+
+Expected: "urgent"
+Received: "normal"
+
+ ❯ tests/iteration.test.ts:7:489
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/iteration.test.ts > relative dates use Oslo calendar day around UTC midnight
+AssertionError: expected '2026-09-25' to be '2026-09-26' // Object.is equality
+
+Expected: "2026-09-26"
+Received: "2026-09-25"
+
+ ❯ tests/iteration.test.ts:8:340
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  15:20:51
+   Duration  242ms (transform 40ms, setup 0ms, import 134ms, tests 30ms, environment 0ms)
+

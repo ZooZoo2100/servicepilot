@@ -1,0 +1,16 @@
+
+> servicepilot@1.0.0 eval:preflight
+> tsx evals/run.ts --preflight
+
+◇ injected env (14) from .env
+{
+  "state": "READY_FOR_LIVE_EVAL",
+  "provider": "simulation",
+  "missing": [
+    "AGENT_PROVIDER=openai or anthropic",
+    "OPENAI_API_KEY (a valid server-side credential)",
+    "ALLOW_PAID_EVALS=true"
+  ],
+  "maxCalls": 10,
+  "credentialsValidatedRemotely": false
+}

@@ -1,0 +1,163 @@
+[
+  {
+    "file": "docs/final/browser-local-fixed.txt",
+    "originalSha256": "d2cb43159ef0649beb9c660a63ecf0c15ef7ccf0f3bc204ffb30b5f1539276bd",
+    "publicSha256": "6277d9e2bb7c9114413ef6fcf03de4922a444e0425f3ad7a2b90a554ec82939f",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/final/browser-local-fixed.txt"
+  },
+  {
+    "file": "docs/final/browser-local.txt",
+    "originalSha256": "7392f024f2eeb7ec2c8daf0e0a8f897d67ee169f9570791b3f5cc9a49a56d5c0",
+    "publicSha256": "1d5c698f62569f7d8b3684353e5a52fedf7b27af303fb44527f08e5c15b411d8",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/final/browser-local.txt"
+  },
+  {
+    "file": "docs/final/browser-public-fixed.txt",
+    "originalSha256": "003087d641cec7bf5b43f92512e1d4f9f5a70722577afa586902d52fb4015d7e",
+    "publicSha256": "5dc185c7876ba4fa633949f06e3f56f2862a720fbd911164c9e70164de6332cb",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/final/browser-public-fixed.txt"
+  },
+  {
+    "file": "docs/final/browser-public-initial.txt",
+    "originalSha256": "2dadf609761c83c4c371ae37a71dc8962d320e5c05964560ba3b7e373a5f8fe6",
+    "publicSha256": "f9d7a98d0c893cef624481d0fa43162dfd927c2bc5c485aa3157b0d566c3ef15",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/final/browser-public-initial.txt"
+  },
+  {
+    "file": "docs/final/check-final.txt",
+    "originalSha256": "7037c2076a82a1a6142b97627925c4ac60e33391eca0f7c64b7570679b4bed27",
+    "publicSha256": "0a5bf5deec8df63c53f24d170d48672fdb6082a84011a33557074d91060fec43",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/final/check-final.txt"
+  },
+  {
+    "file": "docs/final/initial-check.txt",
+    "originalSha256": "b9615382042761ba8bb71cf11a31821b9a8330db44b56b26c1e8c6b33cb6d07c",
+    "publicSha256": "dea3a35c5a13b172c94c34b36451a82858cf2bbd4e684f03b42287d427f905aa",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/final/initial-check.txt"
+  },
+  {
+    "file": "docs/iteration-fixed.txt",
+    "originalSha256": "ee7c626bba7bfea1c81ba2c4f953f8ac6b6e45253757bd6932119c87dda1df3a",
+    "publicSha256": "4a135d1b338f6af962a27ceac6a3cb60d42b7d5a82f33a776b769b3772042745",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/iteration-fixed.txt"
+  },
+  {
+    "file": "docs/iteration-initial.txt",
+    "originalSha256": "bf02c037eb69b0be555f96a0863e5df3aee29bd57165fe987d840f8ec832091e",
+    "publicSha256": "5be1103dba28fc181ba7d63fe031ef2ee3d54a8afd7b6a6b0a9815c409f4880e",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/iteration-initial.txt"
+  },
+  {
+    "file": "docs/verification/evidence/baseline-check.txt",
+    "originalSha256": "1f7f3c1ce5a44ec10c6c24eca2d143490a6be523586c1924a547929fe88e8056",
+    "publicSha256": "21e6cf40f43a7b320ffe574b8abdc0695b6472e3f4aa1ff398160b32d7d165d7",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/baseline-check.txt"
+  },
+  {
+    "file": "docs/verification/evidence/credential-safety-after.txt",
+    "originalSha256": "1f9c2488458a55436a329980ffa2af3bdc02c383e6246d68c7e05101de5234b9",
+    "publicSha256": "22e66f02f1ae2de88fde6fc915672d1354c7d3427f970b4b2cad6ecb8a1ad6bf",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/credential-safety-after.txt"
+  },
+  {
+    "file": "docs/verification/evidence/credential-safety-before.txt",
+    "originalSha256": "de4355534ddee13729b774e881563d4799b53a019fd7cb876b33427e427be4a4",
+    "publicSha256": "d11cd1c5b44e8016d92b9e3bf497a4a168573249eacc795afd3b29b2322eae76",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/credential-safety-before.txt"
+  },
+  {
+    "file": "docs/verification/evidence/final-check-v2.txt",
+    "originalSha256": "d1a4a4d5acf33d25ef30861de614975ffe866532404c7c5016dcaf112d4fde0c",
+    "publicSha256": "b59c229b5392535499571447b4584a5ed5659e67852fcbb1812b350e009a8941",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/final-check-v2.txt"
+  },
+  {
+    "file": "docs/verification/evidence/final-check.txt",
+    "originalSha256": "bbe24ebe46fd26c3ee362c4916903e9d338808ee3f46f3d8c78bae481eca7662",
+    "publicSha256": "b70669e1835ea51ad565ebb89fc4522740a248ca65fe1e46d54ec4ba101997ea",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/final-check.txt"
+  },
+  {
+    "file": "docs/verification/evidence/fix-check.txt",
+    "originalSha256": "8f64517a27f6e007ae03d047fdbba79ac6227976fbe3fb8fe279cc172fe15ccc",
+    "publicSha256": "88c20261196a70519af772fcd21a933c30b0daf1e13b012fa760955eb39131cc",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/fix-check.txt"
+  },
+  {
+    "file": "docs/verification/evidence/live-readiness.txt",
+    "originalSha256": "bd8ca5d659b90857c464635dfda7a14a0093c1168cf019f97f44269cfcf59928",
+    "publicSha256": "e34807bdd608fedcbb01145dc706f9c85aff0f5bc378adae80ec8fc40f0bc79d",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/live-readiness.txt"
+  },
+  {
+    "file": "docs/verification/evidence/live-refusal.txt",
+    "originalSha256": "7f5e830282e3ec3020ec3476bc0789fe2da27e7e161890de0def8ac87a70b057",
+    "publicSha256": "8e59192f410a327b142acda5b3ef24518310a1dba323cd28174775a63f896aaf",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/live-refusal.txt"
+  },
+  {
+    "file": "docs/verification/evidence/openai-readiness-check-final.txt",
+    "originalSha256": "f9442f96026c0642f23cedac399c8db8328a67ba5241f2bd34a4b1a0b59d5787",
+    "publicSha256": "a5ef7267e162d9efbbb14c5a4d2742f8e954de3155090b33d5237701e14f718f",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/openai-readiness-check-final.txt"
+  },
+  {
+    "file": "docs/verification/evidence/openai-readiness-check.txt",
+    "originalSha256": "87b94fe2f1645602e863addd9c11e43c44d23dfcbea97bdea2470dd967a1d51e",
+    "publicSha256": "eb99b60dd72d2adfa4f52fa1d7878ac66b958f4ab0a2b268f305facfc7cb7f15",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/openai-readiness-check.txt"
+  },
+  {
+    "file": "docs/verification/evidence/provider-budget-observation-before.txt",
+    "originalSha256": "9a237aee6d12f49b1f355a5abc499f2ab82a229c13c8776348f1ae7f2f48f3e6",
+    "publicSha256": "05eddc507a87f7ff578d4b807b1b5ed7d204df36bed545a823a1a1dba9b4d289",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/provider-budget-observation-before.txt"
+  },
+  {
+    "file": "docs/verification/evidence/provider-concurrency-before.txt",
+    "originalSha256": "cd927f9cc9ff539b93e308ac21550340e396beef1173e72a81a5d3d37575bd71",
+    "publicSha256": "ca7a4946d772c1d114b5f29c23b9acfd20fd9a16d9c41a9d1f94ae1aa99b0f59",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/provider-concurrency-before.txt"
+  },
+  {
+    "file": "docs/verification/evidence/regressions-before.txt",
+    "originalSha256": "5ad1c6e2c24558dfe17669f9eefc618823a22b00897545ef8890452f18b4aea9",
+    "publicSha256": "e3584be50b87a50334ab43702039d29b2de86e28d2d44628347dbfc13723521b",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/regressions-before.txt"
+  },
+  {
+    "file": "docs/final/screenshot-capture-final.txt",
+    "originalSha256": "d3037e338f9e1820eeaaa5d1f0f2c8d441260d026bd478c4bfc9545c79f0a465",
+    "publicSha256": "23b181d228bfb8be51069224abfeb22e2d4fedc97cc6b320a93fe8a43a6ad9b8",
+    "transformation": "Replace workstation repository root with <repository>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/final/screenshot-capture-final.txt"
+  },
+  {
+    "file": "docs/verification/evidence/runner-launch-error.txt",
+    "originalSha256": "46126580934cfdde780afb4a345fc619c1e891d1b503299c2223a4eb8591108b",
+    "publicSha256": "b6e159c59cd860fecbd14f1dd6a6b9761d4e6ccc4765652c6278c43ed5ffa561",
+    "transformation": "Replace workstation repository/home paths with <repository>/<home>; no other edits",
+    "privateOriginal": "docs/private-evidence/docs/verification/evidence/runner-launch-error.txt"
+  }
+]

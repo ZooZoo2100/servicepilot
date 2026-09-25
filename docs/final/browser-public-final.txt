@@ -1,0 +1,19 @@
+
+> servicepilot@1.0.0 test:public
+> playwright test --config playwright.public.config.ts
+
+[WebServer] ◇ injected env (11) from .env
+[WebServer] (node:16508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:16514) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/public-browser/portfolio.spec.ts:7:1 › public booking, reload and cancellation use the real workflow (593ms)
+  ✓  2 tests/public-browser/portfolio.spec.ts:21:1 › public operations and lab expose safe read-only evidence with keyboard tabs (899ms)
+  ✓  3 tests/public-browser/portfolio.spec.ts:38:1 › public mobile safety, clarification, human handoff and long conversation (1.1s)
+  ✓  4 tests/public-browser/portfolio.spec.ts:52:1 › public HTTP entry refuses origin bypass, tampering and failure injection (34ms)
+  ✓  5 tests/public-browser/portfolio.spec.ts:61:1 › public case study, navigation, mobile layout and skip link (488ms)
+
+  5 passed (4.0s)

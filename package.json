@@ -1,0 +1,62 @@
+{
+  "name": "servicepilot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server/index.ts",
+    "build": "tsc --noEmit && vite build && esbuild src/server/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/server.js",
+    "start": "NODE_ENV=production node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "eval": "tsx evals/run.ts",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build && npm run security:check",
+    "lint": "eslint .",
+    "format": "prettier --write src tests scripts/*.ts evals/*.ts docs/*.md docs/verification/*.md *.md",
+    "test:e2e": "playwright test",
+    "eval:preflight": "tsx evals/run.ts --preflight",
+    "security:check": "tsx scripts/check-secrets.ts",
+    "build:public": "VITE_PUBLIC_DEMO=true npm run build",
+    "preview:public": "PUBLIC_DEMO=true NODE_ENV=production node dist/server.js",
+    "portfolio:prepare": "tsx scripts/prepare-portfolio.ts",
+    "test:public": "playwright test --config playwright.public.config.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.128.0",
+    "@fontsource/dm-sans": "5.3.0",
+    "@fontsource/dm-serif-display": "5.3.0",
+    "better-sqlite3": "13.0.3",
+    "cookie-parser": "1.4.7",
+    "dotenv": "18.0.3",
+    "express": "5.2.1",
+    "express-rate-limit": "8.7.0",
+    "helmet": "8.3.0",
+    "lucide-react": "1.48.0",
+    "openai": "7.23.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@playwright/test": "1.63.0",
+    "@types/better-sqlite3": "9.6.0",
+    "@types/cookie-parser": "1.4.10",
+    "@types/express": "5.0.6",
+    "@types/node": "26.6.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "esbuild": "0.28.2",
+    "eslint": "9.39.5",
+    "prettier": "3.9.9",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.70.1",
+    "vite": "8.3.1",
+    "vitest": "4.1.11"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

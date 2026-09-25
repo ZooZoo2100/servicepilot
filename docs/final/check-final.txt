@@ -1,0 +1,59 @@
+
+> servicepilot@1.0.0 check
+> npm run typecheck && npm run lint && npm test && npm run build && npm run security:check
+
+
+> servicepilot@1.0.0 typecheck
+> tsc --noEmit
+
+
+> servicepilot@1.0.0 lint
+> eslint .
+
+
+> servicepilot@1.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 <repository>
+
+
+ Test Files  8 passed (8)
+      Tests  188 passed (188)
+   Start at  22:34:19
+   Duration  979ms (transform 696ms, setup 0ms, import 2.04s, tests 1.20s, environment 2ms)
+
+
+> servicepilot@1.0.0 build
+> tsc --noEmit && vite build && esbuild src/server/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/server.js
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 1896 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/index.html                                                 0.61 kB │ gzip:  0.39 kB
+dist/client/assets/dm-sans-latin-600-normal-Aqo67rzb.woff2            14.14 kB
+dist/client/assets/dm-sans-latin-400-normal-CW0RaeGs.woff2            14.20 kB
+dist/client/assets/dm-sans-latin-500-normal-B9HHJjqV.woff2            14.30 kB
+dist/client/assets/dm-sans-latin-600-normal-BmdmIIQ2.woff             18.32 kB
+dist/client/assets/dm-sans-latin-400-normal-BwCSEQnW.woff             18.35 kB
+dist/client/assets/dm-sans-latin-500-normal-Dr3UlScf.woff             18.52 kB
+dist/client/assets/dm-serif-display-latin-400-italic-BgxzcTJK.woff    21.62 kB
+dist/client/assets/dm-serif-display-latin-400-normal-_kVFYEpx.woff    21.80 kB
+dist/client/assets/dm-serif-display-latin-400-italic-DpcbibHm.woff2   24.57 kB
+dist/client/assets/dm-serif-display-latin-400-normal-C5_t9oOD.woff2   24.74 kB
+dist/client/assets/index-BrayfiVz.css                                 27.72 kB │ gzip:  6.31 kB
+dist/client/assets/index-DT4ZRYvb.js                                 270.26 kB │ gzip: 83.44 kB
+
+✓ built in 156ms
+
+  dist/server.js  877.8kb
+
+⚡ Done in 20ms
+
+> servicepilot@1.0.0 security:check
+> tsx scripts/check-secrets.ts
+
+◇ injected env (14) from .env
+Credential safety check passed: 168 repository candidates, 0 index entries, browser assets, blank example and ignore rules. No credential values printed.

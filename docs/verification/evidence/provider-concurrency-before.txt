@@ -1,0 +1,25 @@
+
+ RUN  v4.1.11 <repository>
+
+ ❯ tests/provider-concurrency.test.ts (1 test | 1 failed) 50ms
+   × concurrent model requests keep provider observations scoped to their conversation 50ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/provider-concurrency.test.ts > concurrent model requests keep provider observations scoped to their conversation
+AssertionError: expected 'second-request' to be 'first-request' // Object.is equality
+
+Expected: "first-request"
+Received: "second-request"
+
+ ❯ tests/provider-concurrency.test.ts:6:1061
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  16:31:47
+   Duration  336ms (transform 44ms, setup 0ms, import 203ms, tests 50ms, environment 0ms)
+

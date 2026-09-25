@@ -1,0 +1,41 @@
+{
+  "gitCommits": 0,
+  "gitEligibleFilesScanned": 183,
+  "findings": [],
+  "historicalOriginals": [
+    {
+      "artifact": "evals/runs/2026-09-24T13-11-18-183Z.json",
+      "originalSha256Matches": true,
+      "originalLocation": "original public JSON"
+    },
+    {
+      "artifact": "evals/runs/2026-09-24T13-16-56-076Z.json",
+      "originalSha256Matches": true,
+      "originalLocation": "original public JSON"
+    },
+    {
+      "artifact": "evals/runs/2026-09-24T13-29-53-376Z.json",
+      "originalSha256Matches": true,
+      "originalLocation": "original public JSON"
+    },
+    {
+      "artifact": "docs/iteration-fixed.txt",
+      "originalSha256Matches": true,
+      "originalLocation": "ignored byte-identical original; public text is path-redacted"
+    },
+    {
+      "artifact": "docs/iteration-initial.txt",
+      "originalSha256Matches": true,
+      "originalLocation": "ignored byte-identical original; public text is path-redacted"
+    }
+  ],
+  "scope": "Known credential patterns, exact configured secrets via security-check.txt, workstation paths, email patterns and existing Git history; not a guarantee against every encoded secret. Git contains zero commits at audit time.",
+  "ignoredSecretFiles": {
+    ".env": true,
+    ".env.local": true,
+    ".env.production": true,
+    "docs/private-evidence/docs/iteration-initial.txt": true
+  },
+  "deployment": "No push, publish or external deployment performed",
+  "previousFindingResolution": "One npm-cache workstation path was removed from the public log copy; byte-identical original archived."
+}

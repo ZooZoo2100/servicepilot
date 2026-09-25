@@ -1,0 +1,36 @@
+src/server/demo-state.ts 32ms
+src/server/public-demo.ts 20ms
+src/server/store.ts 20ms (unchanged)
+src/server/index.ts 14ms
+src/server/secrets.ts 2ms
+src/client/api.ts 3ms
+src/client/components/Operations.tsx 22ms
+src/client/components/Customer.tsx 13ms
+src/client/components/CaseStudy.tsx 34ms
+src/client/styles.css 87ms
+tests/public-demo.test.ts 8ms
+scripts/prepare-portfolio.ts 3ms
+scripts/check-secrets.ts 4ms
+api/demo.ts 1ms (unchanged)
+vercel.json 9ms
+
+> servicepilot@1.0.0 typecheck
+> tsc --noEmit
+
+
+> servicepilot@1.0.0 lint
+> eslint .
+
+
+> servicepilot@1.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 <repository>
+
+
+ Test Files  8 passed (8)
+      Tests  188 passed (188)
+   Start at  22:23:02
+   Duration  841ms (transform 484ms, setup 0ms, import 1.81s, tests 1.08s, environment 1ms)
+

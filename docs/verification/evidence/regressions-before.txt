@@ -1,0 +1,258 @@
+
+ RUN  v4.1.11 <repository>
+
+ ❯ tests/verification.test.ts (17 tests | 13 failed) 84ms
+   × V01 unresolved relative date cannot be silently replaced by first availability 23ms
+   × V02 multiple vehicles require clarification 5ms
+   × V03 explicit negated vehicle correction selects the positive vehicle 5ms
+   × V04 unknown named vehicle is not silently replaced with a sole owned vehicle 4ms
+   × V05 negated cancellation invalidates pending action 4ms
+   × V06 safety advice survives handoff failure and urgency stays high 5ms
+   × V07 valid long safety reports keep driving warning and urgency 4ms
+   × V08 unresolved date correction invalidates stale date 4ms
+   × V09 reference-only answer preserves pending cancellation workflow 4ms
+   × V10 contradictory dates require clarification 4ms
+   × V11 planner schema rejects impossible calendar dates and times 1ms
+   × V12 planner schema rejects additional authority-like properties 0ms
+   × V13 malicious plan vehicle cannot pollute handoff with another account vehicle 4ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/verification.test.ts > V01 unresolved relative date cannot be silently replaced by first availability
+AssertionError: expected { …(10) } to be undefined
+
+- Expected:
+undefined
+
++ Received:
+{
+  "action": "create",
+  "bookingId": undefined,
+  "customerId": "c-nora",
+  "expiresAt": "2026-09-24T10:10:00.000Z",
+  "id": "1e22a8e7-e44e-4d06-8c1c-e6c6a7868e3d",
+  "serviceId": "routine",
+  "slotId": "2026-09-25_09:30_routine",
+  "summary": "Book routine service for your Volkswagen Golf (BT 73102) on 2026-09-25 at 09:30 (Europe/Oslo). 90-minute assessment · NOK 2,490. Additional work quoted separately.",
+  "vehicleId": "v-nora-2",
+  "version": undefined,
+}
+
+ ❯ tests/verification.test.ts:9:205
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  tests/verification.test.ts > V02 multiple vehicles require clarification
+AssertionError: expected { …(10) } to be undefined
+
+- Expected:
+undefined
+
++ Received:
+{
+  "action": "create",
+  "bookingId": undefined,
+  "customerId": "c-nora",
+  "expiresAt": "2026-09-24T10:10:00.000Z",
+  "id": "d850c57f-8f1a-4933-b194-6dd4af68674d",
+  "serviceId": "routine",
+  "slotId": "2026-09-25_09:30_routine",
+  "summary": "Book routine service for your Tesla Model 3 (EV 48261) on 2026-09-25 at 09:30 (Europe/Oslo). 90-minute assessment · NOK 2,490. Additional work quoted separately.",
+  "vehicleId": "v-nora-1",
+  "version": undefined,
+}
+
+ ❯ tests/verification.test.ts:10:170
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  tests/verification.test.ts > V03 explicit negated vehicle correction selects the positive vehicle
+AssertionError: expected 'v-nora-1' to be 'v-nora-2' // Object.is equality
+
+Expected: "v-nora-2"
+Received: "v-nora-1"
+
+ ❯ tests/verification.test.ts:11:256
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+ FAIL  tests/verification.test.ts > V04 unknown named vehicle is not silently replaced with a sole owned vehicle
+AssertionError: expected { …(10) } to be undefined
+
+- Expected:
+undefined
+
++ Received:
+{
+  "action": "create",
+  "bookingId": undefined,
+  "customerId": "c-erik",
+  "expiresAt": "2026-09-24T10:10:00.000Z",
+  "id": "0760c21a-7b67-4de8-bb42-abef42fbb371",
+  "serviceId": "routine",
+  "slotId": "2026-09-25_09:30_routine",
+  "summary": "Book routine service for your Volvo V60 (DR 59183) on 2026-09-25 at 09:30 (Europe/Oslo). 90-minute assessment · NOK 2,490. Additional work quoted separately.",
+  "vehicleId": "v-erik-1",
+  "version": undefined,
+}
+
+ ❯ tests/verification.test.ts:12:226
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+
+ FAIL  tests/verification.test.ts > V05 negated cancellation invalidates pending action
+AssertionError: expected { …(10) } to be undefined
+
+- Expected:
+undefined
+
++ Received:
+{
+  "action": "cancel",
+  "bookingId": "BK-DEMO-NORA",
+  "customerId": "c-nora",
+  "expiresAt": "2026-09-24T10:10:00.000Z",
+  "id": "9d0dcf8c-88a9-471c-bef8-674cae170ead",
+  "serviceId": "routine",
+  "slotId": "2026-09-25_08:00_routine",
+  "summary": "Cancel booking BK-DEMO-NORA on 2026-09-25 at 08:00 (Europe/Oslo).",
+  "vehicleId": "v-nora-2",
+  "version": 1,
+}
+
+ ❯ tests/verification.test.ts:13:215
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+
+ FAIL  tests/verification.test.ts > V06 safety advice survives handoff failure and urgency stays high
+AssertionError: expected 'The workshop system is temporarily un…' to contain 'Avoid driving'
+
+Expected: "Avoid driving"
+Received: "The workshop system is temporarily unavailable. No booking change was completed. I’ve created a handoff for a workshop adviser (HF-f2efb9f3). This is a simulated queue; no real adviser is contacted. No response time is promised."
+
+ ❯ tests/verification.test.ts:14:252
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯
+
+ FAIL  tests/verification.test.ts > V07 valid long safety reports keep driving warning and urgency
+AssertionError: expected 'The request could not be validated. N…' to contain 'Avoid driving'
+
+Expected: "Avoid driving"
+Received: "The request could not be validated. No booking change was completed. I’ve created a handoff for a workshop adviser (HF-68651cd8). This is a simulated queue; no real adviser is contacted. No response time is promised."
+
+ ❯ tests/verification.test.ts:15:235
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯
+
+ FAIL  tests/verification.test.ts > V08 unresolved date correction invalidates stale date
+AssertionError: expected { …(10) } to be undefined
+
+- Expected:
+undefined
+
++ Received:
+{
+  "action": "create",
+  "bookingId": undefined,
+  "customerId": "c-nora",
+  "expiresAt": "2026-09-24T10:10:00.000Z",
+  "id": "0bae114b-c689-4d7f-9480-009d081e92c5",
+  "serviceId": "routine",
+  "slotId": "2026-09-25_09:30_routine",
+  "summary": "Book routine service for your Volkswagen Golf (BT 73102) on 2026-09-25 at 09:30 (Europe/Oslo). 90-minute assessment · NOK 2,490. Additional work quoted separately.",
+  "vehicleId": "v-nora-2",
+  "version": undefined,
+}
+
+ ❯ tests/verification.test.ts:16:231
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯
+
+ FAIL  tests/verification.test.ts > V09 reference-only answer preserves pending cancellation workflow
+AssertionError: expected undefined to be 'cancel' // Object.is equality
+
+- Expected:
+"cancel"
+
++ Received:
+undefined
+
+ ❯ tests/verification.test.ts:17:218
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯
+
+ FAIL  tests/verification.test.ts > V10 contradictory dates require clarification
+AssertionError: expected { …(10) } to be undefined
+
+- Expected:
+undefined
+
++ Received:
+{
+  "action": "create",
+  "bookingId": undefined,
+  "customerId": "c-nora",
+  "expiresAt": "2026-09-24T10:10:00.000Z",
+  "id": "00bd12f6-e689-40cc-93dd-8a1416962203",
+  "serviceId": "routine",
+  "slotId": "2026-10-01_09:30_routine",
+  "summary": "Book routine service for your Volkswagen Golf (BT 73102) on 2026-10-01 at 09:30 (Europe/Oslo). 90-minute assessment · NOK 2,490. Additional work quoted separately.",
+  "vehicleId": "v-nora-2",
+  "version": undefined,
+}
+
+ ❯ tests/verification.test.ts:18:208
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯
+
+ FAIL  tests/verification.test.ts > V11 planner schema rejects impossible calendar dates and times
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/verification.test.ts:19:309
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/13]⎯
+
+ FAIL  tests/verification.test.ts > V12 planner schema rejects additional authority-like properties
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/verification.test.ts:20:322
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/13]⎯
+
+ FAIL  tests/verification.test.ts > V13 malicious plan vehicle cannot pollute handoff with another account vehicle
+AssertionError: expected 'v-erik-1' not to be 'v-erik-1' // Object.is equality
+ ❯ tests/verification.test.ts:21:431
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/13]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  13 failed | 4 passed (17)
+   Start at  16:21:17
+   Duration  336ms (transform 40ms, setup 0ms, import 176ms, tests 84ms, environment 0ms)
+

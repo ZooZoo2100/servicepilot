@@ -1,0 +1,6 @@
+
+> servicepilot@1.0.0 eval
+> tsx evals/run.ts
+
+◇ injected env (11) from .env
+100/100 passed (simulation)

@@ -1,0 +1,6 @@
+{
+  "mode": "public simulation production build",
+  "browserErrors": [],
+  "fictionalDataOnly": true,
+  "screenshotDirectory": "docs/screenshots/portfolio"
+}

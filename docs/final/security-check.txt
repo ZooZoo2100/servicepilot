@@ -1,0 +1,7 @@
+Public evidence path redactions recorded: 23. Originals retained in ignored local archive.
+
+> servicepilot@1.0.0 security:check
+> tsx scripts/check-secrets.ts
+
+◇ injected env (15) from .env
+Credential safety check passed: 183 repository candidates, 0 index entries, browser assets, blank example and ignore rules. No credential values printed.
