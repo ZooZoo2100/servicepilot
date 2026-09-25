@@ -56,7 +56,8 @@ The conversational layer cannot invent a confirmed booking, price, warranty deci
 | Separate adversarial API campaign                            | **18/29 → 29/29**                                    |
 | Automated suite before public-hosting preparation            | **176 passed**                                       |
 | Current automated suite, including public-hosting and Danish localization boundaries | **197 passed**                                       |
-| Browser verification                                         | **19 passed**: 13 local + 6 public-production checks |
+| Browser tests run locally                                    | **19 passed**: 13 engineering-mode + 6 public-demo checks |
+| Browser tests against the deployed Vercel URL                 | **6 passed** |
 | Live OpenAI / Anthropic evaluation                           | **Intentionally not performed**                      |
 
 Automated tests include the 100 evaluation scenarios; these counts are not independent samples and are not model accuracy scores. The original 89/100 included one catalogue defect, eight overstrict handoff assertions and two wording mismatches. The original suite was already green when the separate adversarial campaign found more defects.
